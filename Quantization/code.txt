@@ -1,0 +1,31 @@
+a.
+        #if args.QWeightFlag:
+        #    Qweight = []
+        
+        #for m in model.modules():
+        #    if isinstance(m, QuantConv2d):       
+        #        if args.QWeightFlag:
+        #            Qweight.append(m.buff_weight)
+
+        #if args.QWeightFlag:
+        #    row = []
+        #    row.append(g_iter)
+        #    for x in range(len(Qweight)):
+        #        if Qweight[x][1][1].numel() == 1: #1x1 convolution
+        #            a = torch.count_nonzero(Qweight[x])
+        #            total = (Qweight[x]).view(-1).size()[0]
+        #            zero_distribution = total - a
+                    
+        #            percentage = round(zero_distribution.item() / total * 100, 2)
+                    #print("Distribution percentage: {:.2f}%".format(percentage))
+        #            row.append(percentage)
+                #writer.add_scalar('Gradient:', Qweight[x].grad.max().item(), g_iter)
+                #writer.add_scalar('Gradient:', Qweight[x].grad.min().item(), g_iter)                       
+        #print("loss:", loss)       
+        #print("row:", row)
+        #with open('C:\\Users\\dudal\\Enhanced_Quantization\\CIFAR_dataset\\res110.csv', 'a', newline='') as csvfile:
+        #    fieldnames = ['Iteration', '[32,16,1,1]', '[64,32,1,1]']
+        #    writer_csv = csv.DictWriter(csvfile, fieldnames=fieldnames)
+            
+            #writer.writeheader()
+        #    writer_csv.writerow({'Iteration': row[0], '[32,16,1,1]': row[1], '[64,32,1,1]': row[2]})
