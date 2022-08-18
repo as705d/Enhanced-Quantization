@@ -6,12 +6,24 @@
 <p align="center">
 <img src="https://user-images.githubusercontent.com/51831143/185300574-94f63f11-891d-4d22-9036-bb2fae4311f0.png">
 </p>
-  
+
 ```python
 import torch
 import numpy as np
 
-
+def weight_grid_setting(B=2, N_grid=False, Z=2):
+  weight_grids = []
+  
+  if B = 1:
+    if N_grid:
+      weight_grids.append(1)
+      weight_grids.append(2 ** (-B * Z))
+    else:
+      weight_grids.append(0)
+      weight_grids.append(1)
+      
+  else:
+    NotImplementedError
 ```
 # Usage Environment
 * python 3.8.12
