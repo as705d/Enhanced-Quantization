@@ -60,4 +60,5 @@ python main.py -e --arch res56 --init result/cifar100/res56_2bit/N_grid/model_be
 N_grid True --constant 2 --dataset cifar100
 ```
 
-
+# Result
+Udating 
