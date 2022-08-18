@@ -27,7 +27,7 @@ def weight_grid_setting(B=2, N_grid=False, Z=2):
     NotImplementedError
 ```
 Our idea is defined in the ```weight_grid_setting``` function.  
-If the ```N_grid``` variable is True, our idea applies. In the opposite case, the existing method applies.
+If the ```N_grid = True```, our idea applies. In the opposite case, the existing method applies.
 
 # Usage Environment
 * python 3.8.12
