@@ -29,7 +29,7 @@ def weight_quantization(b, grids, factorW):
             input_c = input.clamp(min=-1, max=1)       # then clipped to [-1,1]
             sign = input_c.sign()
             input_abs = input_c.abs()
-            input_q = grid_quant(input_abs, grids).mul(sign)  # project to Q^a(alpha, B)
+            input_q = grid_quant(input_abs, grids).mul(sign)  # project to Q^w(alpha, B)
             
             input_out = input_q.mul(alpha)               # rescale to the original range
             #not_zero = torch.count_nonzero(input_out)
