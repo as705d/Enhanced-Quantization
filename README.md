@@ -62,13 +62,13 @@ N_grid True --constant 2 --dataset cifar100
 
 # Result
 * ResNet20  
-Model | W2A2 | Z | Acc
---- | --- | --- | ---
-ResNet20 | --- | 1 | 90.45
-ResNet20 | --- | 2 | 90.80
-ResNet20 | --- | 4 | 90.50
-ResNet20 | --- | 10 | 90.45
-ResNet20 | --- | 20 | 89.59
+| Model | W2A2 | Z | Acc |
+| --- | --- | --- | --- |
+| ResNet20 | --- | 1 | 90.45 |
+| ResNet20 | --- | 2 | 90.80 |
+| ResNet20 | --- | 4 | 90.50 |
+| ResNet20 | --- | 10 | 90.45 |
+| ResNet20 | --- | 20 | 89.59 |
 
 * ResNet32  
 Model | W2A2 | Z | Acc
