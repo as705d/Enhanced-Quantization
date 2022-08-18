@@ -6,7 +6,8 @@ def weight_grid_setting(B=2, N_grid=False, Z=2):
     #3bit and 4bit are applied the APOT 
     #2bit is applied the new grid
     #grid is generated 2^b - 1
-
+    # Z > 0 
+    
     base_a = [0.]
     base_b = [0.]
     weight_grids = []
