@@ -27,7 +27,7 @@ def weight_grid_setting(B=2, N_grid=False, Z=2):
     NotImplementedError
 ```
 Our idea is defined in the ```weight_grid_setting``` function.  
-It also applies only to 2-bit.   
+It also applies only to 2-bit weight.   
 If the ```N_grid = True```, our idea applies. In the opposite case, the existing method applies.  
 ```Z > 0``` and you are free to choose.
 
