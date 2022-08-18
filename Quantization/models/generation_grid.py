@@ -23,11 +23,11 @@ def weight_grid_setting(B=2, N_grid=False, Z=2):
             base_a.append(2 ** (-i - 1))
 
     elif B == 1: #2bit weight --> Apply the new grid
-        if N_grid: #Our Grid : [1, 2^(-BxZ)]
+        if N_grid: #Our Grid : [1, 2^(-BxZ)], Therefore, If Z = 2, quantized weight is [-3, -0.75, 0.75, 3]
             #2^(-BxZ) is nearest zero.
             weight_grids.append(1)
             weight_grids.append(2 ** (-B * Z))
-        else: #Grid of APOT : [0, 1],
+        else: #Grid of APOT : [0, 1], Therefore quantized weight is [-3, -0, 0, 3]
             weight_grids.append(0)
             weight_grids.append(1)
         
