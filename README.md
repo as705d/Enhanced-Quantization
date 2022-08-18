@@ -47,12 +47,6 @@ If the ```N_grid = True```, our idea applies. In the opposite case, the existing
 python main.py --arch res56 --dataset cifar100 --w_bit 32 -id 0,1 --wd 1e-4
 ```
 
-* 2-bit run with CIFAR100 by existing method.
-```python
-python main.py --arch res56 --dataset cifar100 --w_bit 2 --a_bit 2 -id 0,1 --
-wd 1e-4 --lr 4e-2 --N_grid False --init result/cifar100/res56_32bit/model_best.pth.tar
-```
-
 * 2-bit run with CIFAR100 by our method.
 ```python
 python main.py --arch res56 --dataset cifar100 --w_bit 2 --a_bit 2 -id 0,1 --
