@@ -26,7 +26,7 @@ def weight_grid_setting(B=2, N_grid=False, Z=2):
   else:
     NotImplementedError
 ```
-Our idea is defined in the ```python weight_grid_setting ``` function.
+Our idea is defined in the ```weight_grid_setting ``` function.
 
 # Usage Environment
 * python 3.8.12
