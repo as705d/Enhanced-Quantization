@@ -1,7 +1,7 @@
 # Enhanced-Quantization
-*We propose a new quantization technique inspired by APOT (Additive Powers-of-Two).  
-*We can use low-bit (e.g. 2-bit) to powers-of-two and improve accuracy at the same time.  
-*We also approach the problem of weight.
+* We propose a new quantization technique inspired by APOT (Additive Powers-of-Two).  
+* We can use low-bit (e.g. 2-bit) to powers-of-two and improve accuracy at the same time.  
+* We also approach the problem of weight.
 
 <p align="center">
 <img src="https://user-images.githubusercontent.com/51831143/185300574-94f63f11-891d-4d22-9036-bb2fae4311f0.png">
