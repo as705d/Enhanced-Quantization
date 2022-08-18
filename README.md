@@ -2,6 +2,7 @@
 We propose a new quantization technique inspired by APOT (Additive Powers-of-Two).
 We can use low-bit (e.g. 2-bit) to powers-of-two and improve accuracy at the same time.
 
+
 # Usage Environment
 python 3.8.12
 pytorch 1.8.0
