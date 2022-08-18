@@ -7,7 +7,7 @@
 <img src="https://user-images.githubusercontent.com/51831143/185300574-94f63f11-891d-4d22-9036-bb2fae4311f0.png">
 </p>
 
-# Our method Explanation
+### Our method
 ```python
 import torch
 import numpy as np
