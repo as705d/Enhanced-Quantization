@@ -1,5 +1,5 @@
 # Enhanced-Quantization
-We propose a new quantization technique inspired by APOT (Additive Powers-of-Two).
+We propose a new quantization technique inspired by APOT (Additive Powers-of-Two). \t
 We can use low-bit (e.g. 2-bit) to powers-of-two and improve accuracy at the same time.
 
 <p align="center">
