@@ -8,6 +8,9 @@ CUDA 11.1
 # DataSet
 Cifar10 and Cifar100
 
-comment
+32bit run with Cifar100
+```python 
+python main.py --arch res20 --dataset cifar10 --epochs 200 --w_bit 32 -id 0,1 --wd 1e-4
+```
 
 
