@@ -59,7 +59,7 @@ def weight_quantization(b, grids, factorW):
 class weight_quantize_fn(nn.Module):
     def __init__(self, factorW, w_bit, N_grid, constant):
         super(weight_quantize_fn, self).__init__()
-        assert (w_bit <=5 and w_bit > 0) or w_bit == 32
+        assert (w_bit <=5 and w_bit > 0 and constant > 0) or w_bit == 32
         self.factorW = factorW
         self.w_bit = w_bit - 1 #b = b-1 (because using sign function)
         self.register_parameter('wgt_alpha', Parameter(torch.tensor(3.0)))

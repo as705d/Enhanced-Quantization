@@ -80,5 +80,4 @@ def act_grid_setting(B=2):
 
     act_values = torch.Tensor(list(set(act_values)))
     act_values = act_values.mul(1.0 / torch.max(act_values))
-    print(act_values)
     return act_values
