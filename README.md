@@ -59,6 +59,10 @@ python main.py --arch res56 --dataset cifar100 --w_bit 2 --a_bit 2 -id 0,1 --
 wd 1e-4 --lr 4e-2 --N_grid True --constant 2 --init result/cifar100/res56_32bit/model_best.pth.tar
 ```
 
-
+* To evaluate  
+The constant values used for training and testing must be the same.
+```python
+python main.py -e --arch res56 --init result/cifar100/res56_2bit/N_grid/model_best.pth.tar -e -id 0 --w_bit 2 --a_bit 2 --N_grid True --constant 2 --dataset cifar100
+```
 
 
