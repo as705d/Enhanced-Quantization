@@ -42,9 +42,16 @@ If the ```N_grid = True```, our idea applies. In the opposite case, the existing
 
 
 # Run
-* 32bit run with Cifar100
+* 32-bit run with Cifar10
 ```python 
 python main.py --arch res20 --dataset cifar10 --epochs 200 --w_bit 32 -id 0,1 --wd 1e-4
 ```
+
+* 2-bit run with Cifar10 by existing method.
+```python
+python main.py --arch res20 --dataset cifar10 --epochs 200 --w_bit 2 --a_bit 2 -id 0,1 --
+wd 1e-4 --lr 4e-2 --N_grid False --init result/cifar10/res20_32bit/model_best.pth.tar
+```
+
 
 
