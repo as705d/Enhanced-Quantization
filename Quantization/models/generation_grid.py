@@ -1,16 +1,15 @@
 import torch
 import numpy as np
 
-def weight_grid_setting(B=2, N_grid=False):
-    #https://arxiv.org/pdf/1909.13144.pdf
-    #3bit and 4bit are APOT 
+def weight_grid_setting(B=2, N_grid=False, Z=2):
+    #https://arxiv.org/pdf/1909.13144.pdf in APOT
+    #3bit and 4bit are applied the APOT 
     #2bit is applied the new grid
     #grid is generated 2^b - 1
 
     base_a = [0.]
     base_b = [0.]
     weight_grids = []
-    Z = 1
 
     if B == 3: #4bit weight (because weight is B-1)
         for i in range(3):
@@ -80,4 +79,5 @@ def act_grid_setting(B=2):
 
     act_values = torch.Tensor(list(set(act_values)))
     act_values = act_values.mul(1.0 / torch.max(act_values))
+    print(act_values)
     return act_values

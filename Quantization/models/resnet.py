@@ -183,8 +183,8 @@ def resnet32_cifar(args, **kwargs):
     model = ResNet_Cifar(BasicBlock, [5, 5, 5], args, **kwargs)
     return model
 
-def resnet44_cifar(**kwargs):
-    model = ResNet_Cifar(BasicBlock, [7, 7, 7], **kwargs)
+def resnet44_cifar(args, **kwargs):
+    model = ResNet_Cifar(BasicBlock, [7, 7, 7], args, **kwargs)
     return model
 
 
@@ -208,9 +208,9 @@ def resnet164_cifar(args, **kwargs):
     return model
 
 
-def resnet1001_cifar(**kwargs):
-    model = ResNet_Cifar(Bottleneck, [111, 111, 111], **kwargs)
-    return model
+#def resnet1001_cifar(**kwargs):
+#    model = ResNet_Cifar(Bottleneck, [111, 111, 111], **kwargs)
+#    return model
 
 
 if __name__ == '__main__':

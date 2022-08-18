@@ -57,13 +57,13 @@ def weight_quantization(b, grids, factorW):
     return _pq().apply
 
 class weight_quantize_fn(nn.Module):
-    def __init__(self, factorW, w_bit, N_grid):
+    def __init__(self, factorW, w_bit, N_grid, constant):
         super(weight_quantize_fn, self).__init__()
         assert (w_bit <=5 and w_bit > 0) or w_bit == 32
         self.factorW = factorW
-        self.w_bit = w_bit - 1
+        self.w_bit = w_bit - 1 #b = b-1 (because using sign function)
         self.register_parameter('wgt_alpha', Parameter(torch.tensor(3.0)))
-        self.grids = weight_grid_setting(self.w_bit, N_grid)
+        self.grids = weight_grid_setting(self.w_bit, N_grid, constant)
         self.weight_q = weight_quantization(b=self.w_bit, grids=self.grids, factorW=self.factorW)
         
 
@@ -133,9 +133,11 @@ class QuantConv2d(nn.Conv2d):
         self.quan_weight = args.QWeightFlag
         self.quan_act = args.QActFlag
         self.N_grid = args.N_grid
+        self.constant = args.constant
         
         if self.quan_weight:
-            self.weight_quant = weight_quantize_fn(self.factorW, w_bit=self.w_bit, N_grid=self.N_grid)
+            self.weight_quant = weight_quantize_fn(self.factorW, w_bit=self.w_bit, N_grid=self.N_grid,
+                                                   constant=self.constant)
             
         if self.quan_act:
             self.act_grid = act_grid_setting(self.a_bit)
