@@ -61,27 +61,8 @@ N_grid True --constant 2 --dataset cifar100
 ```
 
 # Result
-* ResNet20 with CIFAR10
 
-|**Model**|**W2A2**|**Z**|**Acc(%)**|
-|------|---|---|---|
-|ResNet20|---|1|90.45(%)|
-|ResNet20|---|2|**90.80(%)**|
-|ResNet20|---|4|90.50(%)|
-|ResNet20|---|10|90.45(%)|
-|ResNet20|---|20|89.59(%)|
-
-* ResNet32 with CIFAR100
-
-|**Model**|**W2A2**|**Z**|**Acc(%)**|
-|------|---|---|---|
-|ResNet32|---|1|67.64(%)|
-|ResNet32|---|2|**68.06(%)**|
-|ResNet32|---|4|67.85(%)|
-|ResNet32|---|10|67.32(%)|
-|ResNet32|---|20|67.24(%)|
-
-* ResNet56 with CIFAR100
+* ResNet56 with CIFAR100 (32-bit: **71.77%**)
 
 |**Model**|**W2A2**|**Z**|**Acc(%)**|
 |------|---|---|---|
