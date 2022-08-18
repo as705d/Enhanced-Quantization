@@ -62,6 +62,14 @@ N_grid True --constant 2 --dataset cifar100
 
 # Result
 * ResNet20  
+|Model|W2A2|Z|Acc(%)|
+|------|---|---|---|
+|ResNet20|W2A2|1|90.45(%)|
+|ResNet20|W2A2|2|90.80(%)|
+|ResNet20|W2A2|4|90.50(%)|
+|ResNet20|W2A2|10|90.45(%)|
+|ResNet20|W2A2|20|89.59(%)|
+
 |Model|W2A2|Z|Acc|
 |------|---|---|---|
 |ResNet20|W2A2|1|90.45|
@@ -69,4 +77,3 @@ N_grid True --constant 2 --dataset cifar100
 |ResNet20|W2A2|4|90.50|
 |ResNet20|W2A2|10|90.45|
 |ResNet20|W2A2|20|89.59|
-
