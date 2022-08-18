@@ -45,8 +45,9 @@ parser.add_argument('-e', '--evaluate', dest='evaluate', action='store_true', he
 parser.add_argument('-ct', '--cifar-type', default='10', type=int, metavar='CT', help='10 for cifar10,100 for cifar100 (default: 10)')
 parser.add_argument('--init', help='initialize form pre-trained floating point model', type=str, default='')
 parser.add_argument('-id', '--device', default='0', type=str, help='gpu device')
-parser.add_argument('--w_bit', default=4, type=int, help='the bit-width of the quantized network')
-parser.add_argument('--a_bit', default=4, type=int, help='the bit-width of the quantized network')
+parser.add_argument('--w_bit', default=32, type=int, help='the bit-width of the quantized network')
+parser.add_argument('--a_bit', default=32, type=int, help='the bit-width of the quantized network')
+parser.add_argument('--constant', default=2, type=int, help='exponential product')
 parser.add_argument('--factorW', type=float, default=0.0, help='scaling factor for weights')
 parser.add_argument('--factorA', type=float, default=0.0, help='scaling factor for activations')
 parser.add_argument('--quantize', type=str2bool, default=False, help='training with STE')
@@ -126,7 +127,7 @@ def main():
     print('=> Building model...')
     model=None
     if use_gpu:
-        float = True if args.w_bit == 32 and args.a_bit == 32 else False
+        float = True if args.w_bit == 32 else False
         if args.arch == 'res20':
             model = resnet20_cifar(args, float=float)         
 
@@ -138,13 +139,7 @@ def main():
             
         elif args.arch == 'res110':
             model = resnet110_cifar(args, float=float)
-            
-        elif args.arch == 'res164':
-            model = resnet164_cifar(args, float=float)
-        
-        elif args.arch == 'res1202':
-            model = resnet1202_cifar(args, float=float)
-            
+                        
         else:
             print('Architecture not support!')
             return
@@ -153,7 +148,8 @@ def main():
                 if isinstance(m, QuantConv2d):
                     in_channels = m.in_channels
                     out_channels = m.out_channels
-                    m.weight_quant = weight_quantize_fn(factorW=args.factorW, w_bit=args.w_bit, N_grid=args.N_grid)
+                    m.weight_quant = weight_quantize_fn(factorW=args.factorW, w_bit=args.w_bit, N_grid=args.N_grid,
+                                                        constant=args.constant)
                     m.act_grid = act_grid_setting(args.a_bit)
                     m.act_alq = act_quantization(args.factorA, args.a_bit, m.act_grid)
 
@@ -266,7 +262,7 @@ class AverageMeter(object):
         self.avg = self.sum / self.count
 
 
-def train(trainloader, model, criterion, optimizer, epoch, device, args, writer, iter, g_iter):
+def train(trainloader, model, criterion, optimizer, epoch, device, args, writer, iter):
     batch_time = AverageMeter()
     data_time = AverageMeter()
     losses = AverageMeter()

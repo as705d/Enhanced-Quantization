@@ -1,4 +1,5 @@
-a.
+== Weight gradient check and 1x1 weight zero distribution check....
+
         #if args.QWeightFlag:
         #    Qweight = []
         
